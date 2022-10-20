@@ -1,0 +1,76 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+}
+
+.wrapper {
+  display: grid;
+  grid-template-rows: 3em 20px [main-start] 150px 200px 5em [main-end];
+  grid-template-columns: [main-start] 1fr [main-end] repeat(3, 20px 150px);
+  /* grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr); */
+  /* grid-template-rows: [header-start] 100px [header-end content-start] 400px [footer-start] 100px;
+  grid-template-columns: [ads] 200px [main] minmax(15em, 45em) [links] 200px;
+  grid-template-area:
+    "header header header"
+    "ads main main"
+    "footer footer footer"; */
+  /* grid:
+    [header-start] "header header header" 100px
+    [content-start] "ads main links" 400px
+    [footer-start] "footer footer footer" 100px
+    / [ads] 200px [main] 1fr [links]200px; */
+}
+
+.wrapper > header {
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+  background: rgb(187, 96, 96);
+}
+
+.wrapper > header > ul {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 18px;
+  font-weight: 700;
+  color: aliceblue;
+}
+
+li > a {
+  margin: 0 40px;
+  padding: 8px 20px;
+  transition: all 0.8s ease;
+}
+
+li > a:hover {
+  color: #000;
+  background: rgb(216, 133, 133);
+}
+
+.wrapper > main {
+  grid-row: main-start / main-end;
+  grid-column: main-start / main-end;
+  background-color: rgb(87, 70, 70);
+}
+
+.wrapper > footer {
+  grid-row: -1 / -2;
+  grid-column: 3 / -1;
+  background-color: #000;
+}
+
+footer > p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  height: 100%;
+}
