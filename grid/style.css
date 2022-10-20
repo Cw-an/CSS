@@ -4,10 +4,6 @@
   padding: 0;
 }
 
-html,
-body {
-}
-
 .wrapper {
   display: grid;
   grid-template-rows: 3em 20px [main-start] 150px 200px 5em [main-end];
